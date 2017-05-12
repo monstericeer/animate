@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width" />
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<script src="js/jquery1.8.3.js"></script>
+		<style>
+			.main {
+				width: 60%;
+				margin-left: 20%;
+			}
+			.mdImage {
+				width: 80px;
+				position: relative;
+				left: -40px;
+				margin-left: 50%;
+				z-index: 0;
+			}
+			.bg {
+				background: #FFF;
+				border-top: 1px solid #FFF;
+				padding: 30px 0 50px 0;
+				overflow: hidden;
+			}
+			.mr {
+				border-right: 1px solid #FFF;
+			}
+			.txt {
+				display: inline-block;
+				font-size: 16px;
+				position: absolute;
+				bottom: 20px;
+				left: -19px;
+				margin-left: 50%;
+				z-index: 0;
+				font-weight: 600;
+				color: #888;
+			}
+			.foo {
+				position: absolute;
+				z-index: 1;
+				top: 1px;
+				width: 100%;
+				height: 172px;
+				background: #000;
+				opacity: 0.1;
+			}
+
+			
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="main">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-3 bg mr bg1">
+						<img class="mdImage" src="img/01.png"/>
+						<div class="foo foo1"></div>
+						<div class="txt txt1">
+							Node
+						</div>
+					</div>
+					<div class="col-md-3 bg mr bg2">
+						<img class="mdImage" src="img/02.png"/>
+						<div class="foo foo2"></div>
+						<div class="txt txt2">
+							PHP
+						</div>
+					</div>
+					<div class="col-md-3 bg mr bg3">
+						<img class="mdImage" src="img/03.png"/>
+						<div class="foo foo3"></div>
+						<div class="txt txt3">
+							Python
+						</div>
+					</div>
+					<div class="col-md-3 bg bg4">
+						<img class="mdImage" src="img/04.png"/>
+						<div class="foo foo4"></div>
+						<div class="txt txt4">
+							Ruby
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 bg mr bg5">
+						<img class="mdImage" src="img/05.png"/>
+						<div class="foo foo5"></div>
+						<div class="txt txt5">
+							Nginx
+						</div>
+					</div>
+					<div class="col-md-4 bg mr bg6">
+						<img class="mdImage" src="img/06.png"/>
+						<div class="foo foo6"></div>
+						<div class="txt txt6">
+							Ant
+						</div>
+					</div>
+					<div class="col-md-4 bg bg7">
+						<img class="mdImage" src="img/07.png"/>
+						<div class="foo foo7"></div>
+						<div class="txt txt7">
+							Go
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 bg mr bg8">
+						<img class="mdImage" src="img/08.png"/>
+						<div class="foo foo8"></div>
+						<div class="txt txt8">
+							Java
+						</div>
+					</div>
+					<div class="col-md-3 bg mr bg9">
+						<img class="mdImage" src="img/09.png"/>
+						<div class="foo foo9"></div>
+						<div class="txt txt9">
+							logstash
+						</div>
+					</div>
+					<div class="col-md-3 bg mr bg10">
+						<img class="mdImage" src="img/10.png"/>
+						<div class="foo foo10"></div>
+						<div class="txt txt10">
+							Mysql
+						</div>
+					</div>
+					<div class="col-md-3 bg bg11">
+						<img class="mdImage" src="img/01.png"/>
+						<div class="foo foo11"></div>
+						<div class="txt txt11">
+							Node
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			
+			for(var j=1;j<=12;j++){
+				(function(k){
+					$('.bg'+k).hover(
+						function(){
+							for(var i=0;i<12;i++){
+								if(i==k){
+									$('.foo'+i).stop().animate({top:'120px'},300);
+									$('.txt'+i).stop().animate({bottom:'10px'},300);
+									$('.txt'+i).css({'color':'#000'})
+									$('.foo'+i).css({'border-radius':'6px'})
+									continue;
+								}
+							}
+						},function(){
+							for(var i=0;i<12;i++){
+								if(i==k){
+									$('.foo'+i).stop().animate({top:'0px'},300);
+									$('.txt'+i).stop().animate({bottom:'20px'},300);
+									$('.txt'+i).css({'color':'#888'})
+									$('.foo'+i).css({'border-radius':'0px'})
+									continue;
+								}
+							}
+						}
+					);
+				})(j);	
+			}
+		</script>
+	</body>
+</html>
